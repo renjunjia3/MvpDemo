@@ -1,6 +1,7 @@
 package com.scene.myapplication.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.scene.myapplication.R;
+import com.scene.myapplication.SaveImageActivity;
 import com.scene.myapplication.bean.RecyclerViewInfo;
 
 import java.util.List;
@@ -39,6 +41,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public void onBindViewHolder(MyAdapter.MyViewHolder holder, int position) {
         holder.title.setText(list.get(position).getTitle());
         holder.content.setText(list.get(position).getContent());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                context.startActivity(new Intent(context, SaveImageActivity.class));
+            }
+        });
     }
 
     @Override

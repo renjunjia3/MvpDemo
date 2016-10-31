@@ -68,6 +68,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
                 }
             }
         });
+
     }
 
     @Override
